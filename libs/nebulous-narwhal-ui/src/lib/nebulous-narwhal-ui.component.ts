@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-nebulous-narwhal-ui',
-  imports: [CommonModule],
+  selector: 'nebnar-nebulous-narwhal-ui',
   templateUrl: './nebulous-narwhal-ui.component.html',
   styleUrl: './nebulous-narwhal-ui.component.scss',
 })

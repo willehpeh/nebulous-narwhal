@@ -2,7 +2,7 @@
   "name": "nebulous-narwhal-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/nebulous-narwhal-ui/src",
-  "prefix": "lib",
+  "prefix": "nebnar",
   "projectType": "library",
   "tags": [],
   "targets": {
