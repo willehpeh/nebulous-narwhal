@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/nebulous-narwhal",
         "index": "apps/nebulous-narwhal/src/index.html",
         "browser": "apps/nebulous-narwhal/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/nebulous-narwhal/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,7 +26,10 @@
             "input": "apps/nebulous-narwhal/public"
           }
         ],
-        "styles": ["apps/nebulous-narwhal/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "apps/nebulous-narwhal/src/styles.scss"
+        ],
         "scripts": [],
         "server": "apps/nebulous-narwhal/src/main.server.ts",
         "ssr": {
@@ -78,7 +85,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{options.reportsDirectory}"
+      ],
       "options": {
         "reportsDirectory": "../../coverage/apps/nebulous-narwhal"
       }
