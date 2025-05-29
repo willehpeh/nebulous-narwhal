@@ -1,5 +1,12 @@
 @use "tailwindcss";
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @apply dark:bg-gray-900 dark:text-gray-200;
+}

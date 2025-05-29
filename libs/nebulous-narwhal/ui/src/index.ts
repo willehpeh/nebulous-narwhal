@@ -1,1 +1,2 @@
-export * from './lib/nebulous-narwhal-ui/nebulous-narwhal-ui.component';
+export * from './item-list/item-list';
+
