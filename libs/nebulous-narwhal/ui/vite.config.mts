@@ -6,7 +6,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../../../node_modules/.vite/apps/nebulous-narwhal/packages/ui',
+  cacheDir: '../../../node_modules/.vite/libs/nebulous-narwhal/ui',
   plugins: [angular(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.
   // worker: {
@@ -20,8 +20,7 @@ export default defineConfig(() => ({
     setupFiles: ['src/test-setup.ts'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory:
-        '../../../../coverage/apps/nebulous-narwhal/packages/ui',
+      reportsDirectory: '../../../coverage/libs/nebulous-narwhal/ui',
       provider: 'v8' as const,
     },
   },

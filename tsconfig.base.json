@@ -19,7 +19,7 @@
       "@nebulous-narwhal/domain": ["libs/domain/src/index.ts"],
       "@nebulous-narwhal/infrastructure": ["libs/infrastructure/src/index.ts"],
       "@nebulous-narwhal/nebulous-narwhal-ui": [
-        "apps/nebulous-narwhal/packages/ui/src/index.ts"
+        "libs/nebulous-narwhal/ui/src/index.ts"
       ]
     }
   },
