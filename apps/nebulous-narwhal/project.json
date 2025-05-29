@@ -1,0 +1,97 @@
+{
+  "name": "nebulous-narwhal",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/nebulous-narwhal/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nebulous-narwhal",
+        "index": "apps/nebulous-narwhal/src/index.html",
+        "browser": "apps/nebulous-narwhal/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/nebulous-narwhal/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/nebulous-narwhal/public"
+          }
+        ],
+        "styles": ["apps/nebulous-narwhal/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/nebulous-narwhal/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/nebulous-narwhal/src/server.ts"
+        },
+        "prerender": true
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "nebulous-narwhal:build:production"
+        },
+        "development": {
+          "buildTarget": "nebulous-narwhal:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "nebulous-narwhal:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/apps/nebulous-narwhal"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "nebulous-narwhal:build",
+        "port": 4200,
+        "staticFilePath": "dist/apps/nebulous-narwhal/browser",
+        "spa": true
+      }
+    }
+  }
+}
